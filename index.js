@@ -9,16 +9,11 @@ console.log(absolutePath)
 
 
 import { idmap } from './idmap.js'
-console.log(idmap.replace("_","")) // 'variableValue'
+idmap =  JSON.parse(JSON.stringify(idmap).replaceAll("_",""))
+console.log(idmap) // 'variableValue'
 
 try {
 
-    fs.readdir("./", (err, files) => {
-        files.forEach(file => {
-          console.log(file);
-        });
-      });
-  
   const nameToGreet = core.getInput('github_id');
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
