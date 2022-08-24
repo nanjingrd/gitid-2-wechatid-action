@@ -6,6 +6,11 @@ var path = require("path");
 var absolutePath = path.resolve("./");
 
 console.log(absolutePath)
+
+
+import { idmap } from './idmap.js'
+console.log(idmap.replace("_","")) // 'variableValue'
+
 try {
 
     fs.readdir("./", (err, files) => {

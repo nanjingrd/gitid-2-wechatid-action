@@ -9656,14 +9656,36 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__nccwpck_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
 /******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
+// ESM COMPAT FLAG
+__nccwpck_require__.r(__webpack_exports__);
+
+;// CONCATENATED MODULE: ./idmap.js
+
+const idmap = `
+{
+    "m_a_s_o_n_1_0_5" : "Z_h_a_n_g_D_a_Q_i_a_n"
+}`
+;// CONCATENATED MODULE: ./index.js
 // ncc build index.js --license licenses.txt
 const core = __nccwpck_require__(6024);
 const github = __nccwpck_require__(5016);
@@ -9672,6 +9694,11 @@ var path = __nccwpck_require__(1017);
 var absolutePath = path.resolve("./");
 
 console.log(absolutePath)
+
+
+;
+console.log(idmap.replace("_","")) // 'variableValue'
+
 try {
 
     fs.readdir("./", (err, files) => {
