@@ -9667,9 +9667,18 @@ var __webpack_exports__ = {};
 // ncc build index.js --license licenses.txt
 const core = __nccwpck_require__(6024);
 const github = __nccwpck_require__(5016);
+const fs = __nccwpck_require__(7147);
+
+
 
 try {
-  // `who-to-greet` input defined in action metadata file
+    
+    fs.readdir("./", (err, files) => {
+        files.forEach(file => {
+          console.log(file);
+        });
+      });
+  
   const nameToGreet = core.getInput('github_id');
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();

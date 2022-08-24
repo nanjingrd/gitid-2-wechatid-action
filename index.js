@@ -1,9 +1,18 @@
 // ncc build index.js --license licenses.txt
 const core = require('@actions/core');
 const github = require('@actions/github');
+const fs = require('fs');
+
+
 
 try {
-  // `who-to-greet` input defined in action metadata file
+    
+    fs.readdir("./", (err, files) => {
+        files.forEach(file => {
+          console.log(file);
+        });
+      });
+  
   const nameToGreet = core.getInput('github_id');
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
