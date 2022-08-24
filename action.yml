@@ -1,13 +1,13 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  github_id:  # id of input
+    description: 'github_id'
     required: true
-    default: 'World'
+    default: ''
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  wechat_id: # id of output
+    description: 'wechat_id'
 runs:
   using: 'node16'
   main: 'dist/index.js'
