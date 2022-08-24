@@ -9664,15 +9664,16 @@ module.exports = JSON.parse('[[[0,44],"disallowed_STD3_valid"],[[45,46],"valid"]
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+// ncc build index.js --license licenses.txt
 const core = __nccwpck_require__(6024);
 const github = __nccwpck_require__(5016);
 
 try {
   // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
+  const nameToGreet = core.getInput('github_id');
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
+  core.setOutput("wechat_id", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
