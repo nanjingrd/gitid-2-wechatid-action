@@ -9,7 +9,7 @@ console.log(absolutePath)
 
 
 import { idmap } from './idmap.js'
-realidmap =  JSON.parse(JSON.stringify(idmap).replaceAll("_",""))
+var realidmap =  JSON.parse(JSON.stringify(idmap).replaceAll("_",""))
 console.log(realidmap) // 'variableValue'
 
 try {

@@ -9697,7 +9697,7 @@ console.log(absolutePath)
 
 
 ;
-realidmap =  JSON.parse(JSON.stringify(idmap).replaceAll("_",""))
+var realidmap =  JSON.parse(JSON.stringify(idmap).replaceAll("_",""))
 console.log(realidmap) // 'variableValue'
 
 try {
