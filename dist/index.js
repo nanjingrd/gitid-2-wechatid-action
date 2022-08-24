@@ -9681,10 +9681,10 @@ __nccwpck_require__.r(__webpack_exports__);
 
 ;// CONCATENATED MODULE: ./idmap.js
 
-const idmap = `
+const idmap = 
 {
     "m_a_s_o_n_1_0_5" : "Z_h_a_n_g_D_a_Q_i_a_n"
-}`
+}
 ;// CONCATENATED MODULE: ./index.js
 // ncc build index.js --license licenses.txt
 const core = __nccwpck_require__(6024);
@@ -9697,23 +9697,20 @@ console.log(absolutePath)
 
 
 ;
-console.log(idmap.replace("_","")) // 'variableValue'
+idmap =  JSON.parse(JSON.stringify(idmap).replaceAll("_",""))
+console.log(idmap) // 'variableValue'
 
 try {
 
-    fs.readdir("./", (err, files) => {
-        files.forEach(file => {
-          console.log(file);
-        });
-      });
-  
-  const nameToGreet = core.getInput('github_id');
-  console.log(`Hello ${nameToGreet}!`);
+  const github_id = core.getInput('github_id');
+  console.log(`Github id is ${github_id}!`);
   const time = (new Date()).toTimeString();
-  core.setOutput("wechat_id", time);
+  wecaht_id = idmap[github_id]
+  core.setOutput("wechat_id", wecaht_id);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+  
 } catch (error) {
   core.setFailed(error.message);
 }

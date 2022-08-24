@@ -14,13 +14,15 @@ console.log(idmap) // 'variableValue'
 
 try {
 
-  const nameToGreet = core.getInput('github_id');
-  console.log(`Hello ${nameToGreet}!`);
+  const github_id = core.getInput('github_id');
+  console.log(`Github id is ${github_id}!`);
   const time = (new Date()).toTimeString();
-  core.setOutput("wechat_id", time);
+  wecaht_id = idmap[github_id]
+  core.setOutput("wechat_id", wecaht_id);
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+  
 } catch (error) {
   core.setFailed(error.message);
 }
