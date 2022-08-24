@@ -9668,11 +9668,12 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(6024);
 const github = __nccwpck_require__(5016);
 const fs = __nccwpck_require__(7147);
+var path = __nccwpck_require__(1017);
+var absolutePath = path.resolve("./");
 
-
-
+console.log(absolutePath)
 try {
-    
+
     fs.readdir("./", (err, files) => {
         files.forEach(file => {
           console.log(file);
